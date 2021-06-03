@@ -1,15 +1,15 @@
 {
     "rinkeby": {
-      "router": "0xFaBeb1f43B0d51a5e09908d29C7689B2AC1947F2"
+      "router": "0x27da36D819C97cc9377607408b2b07ef89CFa8b4"
     },
     "matic": {
-      "router": "0x904Df8b2Beb428621C4C820a7Fb3A3Bb916BEff1"
+      "router": "0xA587C0aB071Ed267CC9E06c5ad4D6324D68B8221"
     },
     "mainnet": {
-      "router": "0x0000000000000000000000000000000000000000"
+      "router": ""
     },
     "xdai": {
-      "router": "0x0000000000000000000000000000000000000000"
+      "router": ""
     }
 
 }
