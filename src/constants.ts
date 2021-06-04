@@ -5,13 +5,11 @@ import STAKING_REWARDS_DISTRIBUTION_ABI from './abis/staking-rewards-distributio
 import {
   rinkeby as coreRinkeby,
   mainnet as coreMainnet,
-  matic as coreMatic,
   xdai as coreXDai
 } from './abis/contracts.json'
 import {
-  mainnet as peripheryMainnet,
   rinkeby as peripheryRinkeby,
-  matic as peripheryMatic,
+  mainnet as peripheryMainnet,
   xdai as peripheryXDai
 } from './abis/router.json'
 
@@ -41,21 +39,19 @@ export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
 export const FACTORY_ADDRESS: { [chainId: number]: string } = {
   [ChainId.MAINNET]: coreMainnet.factory,
   [ChainId.RINKEBY]: coreRinkeby.factory,
-  [ChainId.MATIC]: coreMatic.factory,
   [ChainId.XDAI]: coreXDai.factory
 }
 
 export const ROUTER_ADDRESS: { [chainId in ChainId]?: string } = {
   [ChainId.RINKEBY]: peripheryRinkeby.router,
   [ChainId.MAINNET]: peripheryMainnet.router,
-  [ChainId.MATIC]: peripheryMatic.router,
   [ChainId.XDAI]: peripheryXDai.router
 }
 
 export const STAKING_REWARDS_FACTORY_ADDRESS: { [chainId: number]: string } = {
   [ChainId.MAINNET]: '0x0000000000000000000000000000000000001234',
-  [ChainId.RINKEBY]: '0x7929240c367f9b2638D652DBB3D38f7AC516D71B',
-  [ChainId.MATIC]: '0x680242DeD6b8Fc56e5363e67873B983BE78b2166',
+  [ChainId.RINKEBY]: '0x86F001615E0025eFD1A225ea51CEff47fE332bbe',
+  [ChainId.MATIC]: '0x6b2C3EB9C16EcCcD7b6De9AC2DD35805D0DC673C',
   [ChainId.XDAI]: '0x0000000000000000000000000000000000001234'
 }
 
@@ -65,7 +61,6 @@ export const DXSWAP_TOKEN_LIST_ID: { [chainId: number]: number } = {
   [ChainId.MATIC]: 1,
   [ChainId.XDAI]: 5
 }
-
 
 export const INIT_CODE_HASH = '0x21d289536920f920d222409e32789ea13419f64176abb684929511dc5fefc20f'
 
@@ -100,8 +95,8 @@ export const SOLIDITY_TYPE_MAXIMA = {
 
 const PERMISSIVE_MULTICALL_ADDRESS: { [chainId: number]: string } = {
   [ChainId.MAINNET]: '0x0946f567d0ed891e6566c1da8e5093517f43571d',
-  [ChainId.RINKEBY]: '0xcE7D0874A4EF89F38E06A3376026e1cb34D409Da',
-  [ChainId.MATIC]: '0x260B719917D3b33040ca431a790464CA22033550',
+  [ChainId.RINKEBY]: '0xa5f4c981B9Fa57CF29720d4839fCBC1c0AEA0dC2',
+  [ChainId.MATIC]: '0x95748EFd91C4822a9f6220b8F6018cA5b25604E3',
   [ChainId.XDAI]: '0x4E75068ED2338fCa56631E740B0723A6dbc1d5CD'
 }
 

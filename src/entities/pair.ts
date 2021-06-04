@@ -34,18 +34,18 @@ let PAIR_ADDRESS_CACHE: {
     [chainId: number]: { [token0Address: string]: { [token1Address: string]: string } }
   }
 } = {
+  [RoutablePlatform.DEXSWAP.name]: {
+    ...INITIAL_CACHE_STATE
+  },
   [RoutablePlatform.SUSHISWAP.name]: {
     ...INITIAL_CACHE_STATE
   },
   [RoutablePlatform.UNISWAP.name]: {
     ...INITIAL_CACHE_STATE
   },
-  [RoutablePlatform.HONEYSWAP.name]: {
+  [RoutablePlatform.QUICKSWAP.name]: {
     ...INITIAL_CACHE_STATE
-  },
-  [RoutablePlatform.DEXSWAP.name]: {
-    ...INITIAL_CACHE_STATE
-  },
+  }
 }
 
 export class Pair {
@@ -109,7 +109,7 @@ export class Pair {
 
     this.platform = platform ? platform : RoutablePlatform.DEXSWAP
     const liquidityTokenAddress = Pair.getAddress(tokenAmounts[0].token, tokenAmounts[1].token, platform)
-    this.liquidityToken = new Token(tokenAmounts[0].token.chainId, liquidityTokenAddress, 18, 'DXS', 'DXswap')
+    this.liquidityToken = new Token(tokenAmounts[0].token.chainId, liquidityTokenAddress, 18, 'DEXS', 'DexSwap')
     this.protocolFeeDenominator = protocolFeeDenominator ? protocolFeeDenominator : defaultProtocolFeeDenominator
     this.tokenAmounts = tokenAmounts as [TokenAmount, TokenAmount]
     this.swapFee = swapFee ? swapFee : platform.defaultSwapFee

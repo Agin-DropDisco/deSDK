@@ -25,29 +25,26 @@ export class Token extends Currency {
       'WETH',
       'Wrapped Ether'
     ),
-    [ChainId.XDAI]: new Token(
-      ChainId.XDAI,
-      '0x6a023ccd1ff6f2045c3309768ead9e68f978f6e1',
-      18,
-      'WETH',
-      'Wrapped Ether on xDai'
-    ),
     [ChainId.MATIC]: new Token(
       ChainId.MATIC,
       '0xA6FA4fB5f76172d178d61B04b0ecd319C5d1C0aa',
       18,
       'WETH',
       'Wrapped Ether on Matic'
+    ),
+    [ChainId.XDAI]: new Token(
+      ChainId.XDAI,
+      '0x6a023ccd1ff6f2045c3309768ead9e68f978f6e1',
+      18,
+      'WETH',
+      'Wrapped Ether on xDai'
     )
   }
 
 
+
   public static readonly WXDAI: { [key: number]: Token } = {
     [ChainId.XDAI]: new Token(ChainId.XDAI, '0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d', 18, 'WXDAI', 'Wrapped xDAI')
-  }
-
-  public static readonly WMATIC: { [key: number]: Token } = {
-    [ChainId.MATIC]: new Token(ChainId.MATIC, '0x9c3C9283D3e44854697Cd22D3Faa240Cfb032889', 18, 'WMATIC', 'Wrapped Matic')
   }
 
   public static readonly DXD: { [key: number]: Token } = {
@@ -60,6 +57,10 @@ export class Token extends Currency {
       'DXD',
       'DXdao from Ethereum'
     )
+  }
+
+  public static readonly WMATIC: { [key: number]: Token } = {
+    [ChainId.MATIC]: new Token(ChainId.MATIC, '0x9c3C9283D3e44854697Cd22D3Faa240Cfb032889', 18, 'WMATIC', 'Wrapped Matic')
   }
 
   private static readonly NATIVE_CURRENCY_WRAPPER: { [chainId in ChainId]: Token } = {
@@ -125,6 +126,6 @@ export function currencyEquals(currencyA: Currency, currencyB: Currency): boolea
 
 // reexport for convenience
 export const WETH = Token.WETH
+export const WMATIC = Token.WMATIC
 export const DXD = Token.DXD
 export const WXDAI = Token.WXDAI
-export const WMATIC = Token.WMATIC

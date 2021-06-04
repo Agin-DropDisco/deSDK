@@ -4,8 +4,8 @@ import { getNetwork } from '@ethersproject/networks'
 import { getDefaultProvider } from '@ethersproject/providers'
 import { TokenAmount } from './entities/fractions/tokenAmount'
 import { Pair } from './entities/pair'
-import IDEXswapPair from 'dexswap-core/build/IDEXswapPair.json'
-import IDEXswapFactory from 'dexswap-core/build/IDEXswapFactory.json'
+import IDEXswapPair from './abis/IDEXswapPair.json'
+import IDEXswapFactory from './abis/IDEXswapFactory.json'
 import invariant from 'tiny-invariant'
 import {
   ChainId,
@@ -52,7 +52,7 @@ export abstract class Fetcher {
       Pair.getAddress(tokenAmounts[0].token, tokenAmounts[1].token, platform),
       18,
       'DEXS',
-      'DEXSwap'
+      'DexSwap'
     )
     const swapFee = JSBI.BigInt(await new Contract(liquidityToken.address, IDEXswapPair.abi, provider).swapFee())
     const protocolFeeDenominator = JSBI.BigInt(
@@ -194,7 +194,7 @@ export abstract class Fetcher {
         factoryContract.interface.getFunction('allPairs(uint256)'),
         result.returnData[resultIndex]
       )[0]
-      tokenPairsToFetch.push(new Token(chainId, tokenPairAddress, 18, 'DXS', 'DXswap'))
+      tokenPairsToFetch.push(new Token(chainId, tokenPairAddress, 18, 'DEXS', 'DexSwap'))
     }
 
     // Fetch the pairs that we dont have the fee and owner
