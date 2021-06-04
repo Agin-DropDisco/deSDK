@@ -1,7 +1,7 @@
 {
   "name": "dexswap-sdk",
   "license": "AGPL-3.0-or-later",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "author": "Agin DropDisco",
   "description": "An SDK for building applications on top of DEXswap.",
   "main": "dist/index.js",
