@@ -4,8 +4,8 @@ import { getNetwork } from '@ethersproject/networks'
 import { getDefaultProvider } from '@ethersproject/providers'
 import { TokenAmount } from './entities/fractions/tokenAmount'
 import { Pair } from './entities/pair'
-import IDEXswapPair from 'dexswap-core/build/IDEXswapPair.json'
-import IDEXswapFactory from 'dexswap-core/build/IDEXswapFactory.json'
+import IDEXswapPair from './abis/IDEXswapPair.json'
+import IDEXswapFactory from './abis/IDEXswapFactory.json'
 import invariant from 'tiny-invariant'
 import {
   ChainId,

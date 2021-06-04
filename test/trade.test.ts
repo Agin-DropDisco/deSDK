@@ -57,13 +57,13 @@ describe('Trade', () => {
     expect(trade.inputAmount.currency).toEqual(token0)
     expect(trade.outputAmount.currency).toEqual(ETHER)
   })
-  it('has platform value set default to DexSwap', () => {
+  it('has platform value set default to Swapr', () => {
     const trade = new Trade(
       new Route([pair_weth_0], ETHER),
       CurrencyAmount.nativeCurrency(JSBI.BigInt(100), ChainId.MAINNET),
       TradeType.EXACT_INPUT
     )
-    expect(trade.platform).toEqual(RoutablePlatform.DEXSWAP)
+    expect(trade.platform).toEqual(RoutablePlatform.SWAPR)
   })
 
   describe('#bestTradeExactIn', () => {
